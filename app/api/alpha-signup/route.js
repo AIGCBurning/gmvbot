@@ -1,3 +1,5 @@
+import { getCloudflareContext } from "@opennextjs/cloudflare";
+
 export async function POST(request) {
   try {
     const body = await request.json()
@@ -7,7 +9,8 @@ export async function POST(request) {
       return Response.json({ error: 'All fields are required' }, { status: 400 })
     }
 
-    const RESEND_API_KEY = process.env.RESEND_API_KEY
+    const { env } = await getCloudflareContext()
+    const RESEND_API_KEY = env.RESEND_API_KEY
     if (!RESEND_API_KEY) {
       console.error('RESEND_API_KEY not configured')
       return Response.json({ error: 'Server configuration error' }, { status: 500 })
