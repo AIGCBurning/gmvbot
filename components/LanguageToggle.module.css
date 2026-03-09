@@ -1,0 +1,26 @@
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-secondary);
+  font: 500 0.75rem / 1 var(--font-mono);
+  letter-spacing: 0.05em;
+  transition: border-color 0.3s var(--ease-out-expo);
+  cursor: none;
+}
+
+.toggle:hover {
+  border-color: var(--accent-cyan);
+}
+
+.active {
+  color: var(--accent-cyan);
+}
+
+.divider {
+  opacity: 0.3;
+}

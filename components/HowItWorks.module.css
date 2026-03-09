@@ -1,0 +1,119 @@
+.section {
+  position: relative;
+  padding: var(--sp-32) 0;
+  overflow: hidden;
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.gridPath {
+  fill: none;
+  stroke: var(--border-color);
+  stroke-width: 1px;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--sp-6);
+}
+
+@media (min-width: 768px) { .container { padding: 0 var(--sp-12); } }
+@media (min-width: 1024px) { .container { padding: 0 var(--sp-16); } }
+
+.label {
+  display: block;
+  text-align: center;
+  font: 600 0.625rem / 1 var(--font-mono);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-purple);
+  margin-bottom: var(--sp-6);
+}
+
+.title {
+  text-align: center;
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--sp-3);
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  max-width: 28rem;
+  margin: 0 auto var(--sp-20);
+  line-height: 1.6;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  max-width: 44rem;
+  margin: 0 auto;
+  background: var(--border-color);
+  border: 1px solid var(--border-color);
+}
+
+.step {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+.stepMask {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: var(--accent-purple);
+  transform: scaleX(0);
+}
+
+.stepInner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-8);
+  padding: var(--sp-10) var(--sp-8);
+  opacity: 0;
+}
+
+.stepNum {
+  font: 700 2.5rem / 1 var(--font-mono);
+  color: var(--accent-purple);
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.stepContent {
+  flex: 1;
+}
+
+.stepTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: var(--sp-2);
+}
+
+.stepDesc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .stepRight .stepInner {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+}
