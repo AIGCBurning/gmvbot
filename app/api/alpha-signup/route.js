@@ -36,7 +36,7 @@ export async function POST(request) {
       },
       body: JSON.stringify({
         from: 'GMVBot Alpha <onboarding@resend.dev>',
-        to: '838237663@qq.com',
+        to: 'ironm6028@gmail.com',
         subject: `[Alpha Signup] ${name} - ${email}`,
         html,
       }),
